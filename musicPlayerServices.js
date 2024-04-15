@@ -1,7 +1,5 @@
 import TrackPlayer, { RepeatMode, Event } from 'react-native-track-player';
 import { TRACKS } from './src/constant';
-import { skipToPrevious } from 'react-native-track-player/lib/src/trackPlayer';
-
 
 export async function addTrack() {
     await TrackPlayer.add(TRACKS);
@@ -23,7 +21,6 @@ export async function setupPlayer(){
         return isSetup;
     }
 }
-
 export async function playbackServices() {
     TrackPlayer.addEventListener(Event.RemotePause, () => {
         TrackPlayer.pause();
