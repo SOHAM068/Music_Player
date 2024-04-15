@@ -27,7 +27,7 @@ const SongSlider = () => {
     </View>
   )
 }
-
+export default SongSlider
 const styles = StyleSheet.create({
     sliderContainer: {
         width: 350,

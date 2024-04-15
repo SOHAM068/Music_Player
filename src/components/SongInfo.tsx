@@ -20,7 +20,7 @@ const SongInfo = ({track} : songInfoProps) => {
     </View>
   )
 }
-
+export default SongInfo
 const styles = StyleSheet.create({
     container: {
         width: '90%',

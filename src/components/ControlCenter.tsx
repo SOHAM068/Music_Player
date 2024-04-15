@@ -5,7 +5,7 @@ import { playbackServices } from '../../musicPlayerServices'
 import Icons from 'react-native-vector-icons/MaterialIcons'
 
 
-const control_Center = () => {
+const ControlCenter = () => {
     const playBackState = usePlaybackState();
   
     const skipToNext = async () => {
@@ -29,9 +29,9 @@ const control_Center = () => {
       <Pressable onPress={skipToPrevious}>
         <Icons name="skip-previous" size={48} style={styles.icon} />
       </Pressable>
-      <Pressable onPress={() => togglePlayPause(playBackState)}>
+      <Pressable onPress={() => togglePlayPause(playBackState?.state || State.None)}>
         <Icons 
-          name={playBackState === State.Playing ? "pause" : "play-arrow"}
+          name={playBackState?.state === State.Playing ? "pause" : "play-arrow"}
           size={75}
           style={styles.icon}
         />
@@ -42,7 +42,7 @@ const control_Center = () => {
     </View>
   )
 }
-
+export default ControlCenter
 const styles = StyleSheet.create({
   container: {
     marginBottom: 56,
